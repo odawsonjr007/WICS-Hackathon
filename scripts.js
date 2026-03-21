@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function ()
     const deedBtn = document.getElementById("deedBtn");
     const deedDisplay = document.getElementById("deedDisplay");
     const deeds = [
-        "Compliment 3 different people (don't be vague!",
+        "Compliment 3 different people (don't be vague!)",
         "Mentor someone",
         "Pay for the next person in line",
         "Donate something you don't need",
@@ -22,4 +22,24 @@ document.addEventListener("DOMContentLoaded", function ()
         const randomIndex = Math.floor(Math.random() * deeds.length);
         deedDisplay.textContent = deeds[randomIndex];
     });
+    const loginBtn = document.getElementById("loginBtn");
+    if (loginBtn)
+    {
+        loginBtn.addEventListener("click", function(){
+            const u = document.getElementById("username").value;
+            const p = document.getElementById("password").value;
+            const error = document.getElementById("error");
+
+            const user = "Steven";
+            const pass = "1234567890"
+            if (u == user && p == pass)
+            {
+                window.location.href = "happy.html";
+            }
+            else
+            {
+                error.textContent = "Sorry, invalid user or password applied.";
+            }
+        })
+    }
 });
