@@ -16,7 +16,10 @@ document.addEventListener("DOMContentLoaded", function ()
         "Encourage someone on their goals or taking a risk",
         "Let go of a grudge and forgive that person",
         "Create something innovative and gift it to someone",
-    ]
-    deedBtn.addEventListener("click, function");
-    
-}
+    ];
+    deedBtn.addEventListener("click", function()
+    {
+        const randomIndex = Math.floor(Math.random() * deeds.length);
+        deedDisplay.textContent = deeds[randomIndex];
+    });
+});
