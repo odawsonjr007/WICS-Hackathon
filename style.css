@@ -1,79 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 body {
-    font-family: 'Roboto', sans-serif;
-    background: #033aa8;
-    color: #d71313;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #0a2540, #020617);
+  color: #e5e7eb;
+}
+/* NAV */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  backdrop-filter: blur(14px);
+  background: rgba(10, 37, 64, 0.6);
+  z-index: 100;
+}
+/* SECTIONS */
+.section {
+  padding: 120px 80px;
 }
 
-.navbar{
-     position: fixed;
-    top: 0;
-    width: 100%;
-     padding: 20px 60px;
-    display: flex;
-    justify-content: space-between;
-    /* backdrop-filter: blur(14px); */
-    background: #0080ff99;
-     z-index: 100;
-}
-.logo{
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-.nav-links a{
-    margin-left: 25px;
-    text-decoration: none;
-    color: #e5e7eb;
-}
-.nav-cta{
-    border: 1px solid #60a5fa;
-    padding: 8px 14px;
-    border-radius: 20px;
-}
-.inspire h2{
-    font-size: 64px;
-    color: #3b82f6;
-    line-height: 1.1;
-}
-.inspire p{
-    max-width: 600px;
-    opacity: 0.85;
-}
-.contact-info{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-form {
-  max-width: 420px;
-}
-input {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 14px;
-  border-radius: 10px;
-  border: none;
+.section h2 {
+  font-size: 38px;
+  margin-bottom: 20px;
 }
 button {
-  width: 100%;
+  width: 25%;
   padding: 14px;
   border-radius: 30px;
   border: none;
-  background: linear-gradient(135deg, #60a5fa, #3b82f6);
+  background: linear-gradient(135deg, #efd10b, #3b82f6);
   font-weight: 600;
   cursor: pointer;
 }
-.socials a {
-  margin-right: 20px;
-  color: #60a5fa;
-  text-decoration: none;
-}
-/* FOOTER */
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 20px;
   opacity: 0.6;
+  bottom: 0%;
+  position: fixed;
+  width: 100%;
+}
+.social-media a {
+  color: #e326e3;
+  text-decoration: none;
+}
+/* GLASS */
+.glass {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  margin: 40px;
+  position: relative;
+  top: 50px;
+}
+form {
+  max-width: 420px;
 }
