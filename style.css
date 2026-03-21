@@ -63,3 +63,10 @@ footer {
 form {
   max-width: 420px;
 }
+ img {
+  width: 300px;   
+  height: auto;
+   display: block;
+  margin: 0 auto;
+  background: none;
+}
