@@ -1,45 +1,68 @@
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+apiKey: "AIzaSyBuf3k4mwjrZxVcDYS1WNt3F47mzzoxuGE",
+authDomain: "socbot-a5807.firebaseapp.com",
+projectId: "socbot-a5807",
+storageBucket: "socbot-a5807.firebasestorage.app",
+messagingSenderId: "316058275050",
+appId: "1:316058275050:web:c86da93437f2d2cfc4db93",
+measurementId: "G-4JRJDSCHSN"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+
+
+async function getDeeds() {
+  const deedsCollection = collection(db, "deeds");
+  const snapshot = await getDocs(deedsCollection);
+
+  const deeds = [];
+  snapshot.forEach(doc => {
+    deeds.push(doc.data().text);
+  });
+
+  return deeds;
+}
+
 document.addEventListener("DOMContentLoaded", function ()
 {
     const deedBtn = document.getElementById("deedBtn");
     const deedDisplay = document.getElementById("deedDisplay");
-    const deeds = [
-        "Compliment 3 different people (don't be vague!)",
-        "Mentor someone",
-        "Pay for the next person in line",
-        "Donate something you don't need",
-        "Create an appreciation post for something you love",
-        "Run an errand for someone",
-        "Volunteer your time for community service",
-        "Send a quick message to a friend or someone you haven't talked to in a while",
-        "Greet a stranger",
-        "Help someone with homework",
-        "Encourage someone on their goals or taking a risk",
-        "Let go of a grudge and forgive that person",
-        "Create something innovative and gift it to someone",
-    ];
-    deedBtn.addEventListener("click", function()
-    {
-        const randomIndex = Math.floor(Math.random() * deeds.length);
-        deedDisplay.textContent = deeds[randomIndex];
-    });
+    if (deedBtn) {
+        deedBtn.addEventListener("click",  async function () {
+            const deeds = await getDeeds();
+            const randomIndex = Math.floor(Math.random() * deeds.length);
+            console.log("test")
+            deedDisplay.textContent = deeds[randomIndex];
+        });
+    }
     const loginBtn = document.getElementById("loginBtn");
     if (loginBtn)
     {
-        loginBtn.addEventListener("click", function(){
-            const u = document.getElementById("username").value;
-            const p = document.getElementById("password").value;
-            const error = document.getElementById("error");
+        loginBtn.addEventListener("click", async function () {
+            const email = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
 
-            const user = "Steven";
-            const pass = "1234567890"
-            if (u == user && p == pass)
-            {
-                window.location.href = "happy.html";
+            try {
+                await signInWithEmailAndPassword(auth, email, password);
+
+                window.location.href = "index.html";
+
+            } catch (err) {
+                console.error(err.message);
             }
-            else
-            {
-                error.textContent = "Sorry, invalid user or password applied.";
-            }
-        })
+        });
     }
 });
