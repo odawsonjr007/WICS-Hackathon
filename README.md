@@ -1,10 +1,10 @@
-# [SocBot] : [Team Number]
+# SocBot
 # Orlando Dawson, Chareunphone Phanthapanya
-Project Manager: [Orlando Dawson] ([odawsonjr007])\
-Communications Lead: [Chareunphone Phanthapanya] ([lejunscool])\
-Git Master: [Orlando Dawson] ([odawsonjr007])\
-Design Lead: [Chareunphone Phanthapanya] ([lejunscool])\
-Quality Assurance Tester: [Orlando Dawson] ([odawsonjr007])
+Project Manager: Orlando Dawson (odawsonjr007)\
+Communications Lead: Chareunphone Phanthapanya (lejunscool)\
+Git Master: Orlando Dawson (odawsonjr007)\
+Design Lead: Chareunphone Phanthapanya (lejunscool)\
+Quality Assurance Tester: Orlando Dawson (odawsonjr007)
 
 # About Our Software
 
