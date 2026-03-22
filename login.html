@@ -4,12 +4,27 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login</title>
+        <link rel="stylesheet" href="log.css">
 </head>
 <body>
-    <h2>Login</h2>
-    <input type="text" id="username" placeholder="Username" required>
-    <input type="passwod" id="password" placeholder="Password" required>
-    <button id="loginBtn">Login</button>
+            <link rel="stylesheet" href="log.css">
+    <!--- Navigation Bar -->
+    <nav class = "navbar">
+        <div class = "logo">SocBot</div>
+        <div class = "nav-links">
+            <button1><a href = "index.html">Home</a></button1>
+            <button2><a href = "quotes.html">Quotes</a></button2>
+            <button2><a href = "login.html">Logout</a></button3>
+        </div>
+    </nav>
+    <div class="login-container">
+        <h2>Login</h2>
+            <form id="loginForm">
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+        <button>Login</button>
+        </form>
+</div>
     <script type="module" src ="scripts.js"></script>
 </body>
 </html>
