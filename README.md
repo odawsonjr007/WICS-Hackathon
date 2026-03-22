@@ -12,6 +12,7 @@ A Socrates-based web service, ensuring and updating the well-being of users whil
 kindness and words of wisdom to guide people go move along in their everyday lives.
 ## Platforms Tested on
 - Windows
+- Linux
 
 ## Dependencies
 Firebase
