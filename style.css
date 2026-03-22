@@ -14,7 +14,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 20px 60px;
+  padding: 30px 30px;
   display: flex;
   justify-content: space-between;
   backdrop-filter: blur(14px);
@@ -23,19 +23,49 @@ body {
 }
 /* SECTIONS */
 .section {
+    text-align: center;
   padding: 120px 80px;
 }
 
-.section h2 {
+.section h1 {
+    text-align: center;
   font-size: 38px;
   margin-bottom: 20px;
 }
 button {
+  justify-content: center;
   width: 25%;
   padding: 14px;
   border-radius: 30px;
   border: none;
   background: linear-gradient(135deg, #efd10b, #3b82f6);
+  font-weight: 600;
+  cursor: pointer;
+}
+button1 {
+  width: 15%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #e9e8e6, #f3940f);
+  font-weight: 600;
+  cursor: pointer;
+}
+button2 {
+  width: 15%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #e9e8e6, #f3940f);
+  font-weight: 600;
+  cursor: pointer;
+}
+button3 {
+  width: 15%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #e9e8e6, #f3940f);
   font-weight: 600;
   cursor: pointer;
 }
@@ -48,6 +78,7 @@ footer {
   width: 100%;
 }
 .social-media a {
+    text-align: center;
   color: #e326e3;
   text-decoration: none;
 }
@@ -61,6 +92,7 @@ footer {
   top: 50px;
 }
 form {
+    text-align: center;
   max-width: 420px;
 }
  img {
@@ -69,4 +101,17 @@ form {
    display: block;
   margin: 0 auto;
   background: none;
+}
+form {
+  display: flex;
+  align-items: center;    /* center horizontally */
+}
+input {
+  flex: 1;              /* take up remaining space */
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #e9e8e6, #f3940f);
+  font-weight: 600;
+  margin-right: 10px;   /* space between input and button */
 }

@@ -17,9 +17,9 @@
     <nav class = "navbar">
         <div class = "logo">SocBot</div>
         <div class = "nav-links">
-        <a href = "happy.html">Home</a>
-        <a href = "quotes.html">Quotes</a>
-        <a href = "logout.html">Logout</a>
+            <button1><a href = "index.html">Home</a></button1>
+            <button2><a href = "quotes.html">Quotes</a></button2>
+            <button2><a href = "logout.html">Logout</a></button3>
         </div>
     </nav>
 
@@ -27,12 +27,13 @@
     <!--- inspire section-->
     <section id = "inspire" class = "section glass" style = "opacity: 1; transform: translateY(0px);">
         <link rel="stylesheet" href="style.css">
-        <h2>Inspire Your Day</h2>
-        <p>Explore a collection of inspiring quotes that will uplift your spirits and motivate you to embrace positivity
-        </p>
-        <form onsubmit="submitForm(event)">
-        <input type="text" id="Share" placeholder="Embrace your mood!">
+        <h1>Inspire Your Day</h1>
+        <h2>Explore a collection of inspiring quotes that will uplift your spirits and motivate you to embrace positivity
+        </h2>
+        
+        <input type="text" id="userinput" placeholder="Log your thoughts..." required>
         <button type = "submit">Share</button>
+        <script type="module" src ="scripts.js"></script>
         <p2 id="response"></p2>
         </form>
         <div class = "contact-info">
