@@ -21,4 +21,4 @@ Firebase
 Open through VS Code
 
 1. Select Go Live Under index.html
-2. OR go to command line and enter "start index.html"
+2. OR go to command line and enter "start index.html" (Windows Only)
