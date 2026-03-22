@@ -6,7 +6,7 @@
     <title>Happy</title>
     <meta name="description" content="A website to spread happiness and positivity.">
         <link rel="stylesheet" href="style.css">
-    </head>
+</head>
     <body>
   
     <!---LOGO -->
@@ -31,9 +31,10 @@
         <p>Explore a collection of inspiring quotes that will uplift your spirits and motivate you to embrace positivity
         </p>
         <form onsubmit="submitForm(event)">
-        <input type="text" id="Share" placeholder="Embrace your mood!">
+        <input type="text" id="searchInput" placeholder="Embrace your mood!">
         <button id="quoteBtn">Share</button>
-        <p2 id="response"></p2>
+        <p id="quoteDisplay"></p>
+        <p id="authorDisplay"></p>
         </form>
         <div class = "contact-info">
             <p>Need help or someone to talk to?</p>
@@ -50,7 +51,7 @@
         <footer>
             <p>2026 Happy. All rights reserved.</p>
         </footer>
-
+    <script type="module" src="script.js"></script>
 
 
     </body>
