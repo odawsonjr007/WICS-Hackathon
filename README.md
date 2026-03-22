@@ -16,3 +16,9 @@ kindness and words of wisdom to guide people go move along in their everyday liv
 
 ## Dependencies
 Firebase
+
+## How to Open
+Open through VS Code
+
+1. Select Go Live Under index.html
+2. OR go to command line and enter "start index.html"
