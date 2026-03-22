@@ -35,6 +35,17 @@ async function getDeeds() {
 
   return deeds;
 }
+async function getQuotesByKeyword(keyword)
+{
+    const quotesCollection = collection(db, "quotes");
+    const q = query(quotesCollection, where("keywords", "array-contains",
+        keyword.toLowerCase()));
+    const quotes = [];
+    snapshop.forEach(doc => {
+        quotes.push(doc.data());
+    });
+    return quotes;
+}
 
 document.addEventListener("DOMContentLoaded", function ()
 {
@@ -48,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function ()
             deedDisplay.textContent = deeds[randomIndex];
         });
     }
+
     const loginBtn = document.getElementById("loginBtn");
     if (loginBtn)
     {
@@ -66,3 +78,34 @@ document.addEventListener("DOMContentLoaded", function ()
         });
     }
 });
+    const quoteBtn = document.getElementById("quoteBtn");
+    const quoteDisplay = document.getElementById("quoteDisplay");
+    const authorDisplay = document.getElementById("authorDisplay");
+    const searchInput = document.getElementById("searchInput");
+    if (quoteBtn)
+    {
+        quoteBtn.addEventListener("click", async function (){
+            const keyword = searchInput.value.trim().toLowerCase();
+            if (!keyword)
+            {
+                quoteDisplay.textContent = "Care to specify?";
+                authorDisplay.textContent = "";
+                return;
+            }
+            const quotes = await getQuotesByKeyword(keyword);
+            
+            if (quotes.length > 0)
+            {
+                randomIndex = Math.floor(Math.random * quotes.length);
+                const selected = quotes[randomIndex];   
+                quoteDisplay.textContent = `"${selected.text}"`;
+                authorDisplay.textContent = `-${selected.text}`;
+            }
+            else{
+                quotenDisplay.textContent = "No quotes found for that keyword.";
+                authorDisplay.textContent = "";
+            }
+        })
+    }
+    quoteBtn.addEventListener("click", function() { const randomIndex = Math.floor(Math.random() * quotes.length);
+        quoteDisplay.textContent = quotes[randomIndex]; });
