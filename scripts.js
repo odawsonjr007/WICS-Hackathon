@@ -35,6 +35,15 @@ async function getDeeds() {
 
   return deeds;
 }
+async function getQuotes() {
+    const quotesCollection = collection(db, "quotes");
+    const snapshot = await getDocs(quotesCollection);
+
+    const quotes = [];
+    snapshop.forEach(doc => {
+        quotes.push(doc.data().text);
+    });
+}
 
 document.addEventListener("DOMContentLoaded", function ()
 {
@@ -48,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function ()
             deedDisplay.textContent = deeds[randomIndex];
         });
     }
+
     const loginBtn = document.getElementById("loginBtn");
     if (loginBtn)
     {
@@ -66,3 +76,21 @@ document.addEventListener("DOMContentLoaded", function ()
         });
     }
 });
+    const quoteBtn = document.getElementById("quoteBtn");
+    const quoteDisplay = document.getElementById("quoteDisplay");
+    const quotes = [
+        "You may encounter many defeats, but you must not be defeated.",
+        "Hardships often prepare ordinary people for an extraordinary destiny.",
+        "Out of difficulties grow miracles.",
+        "I used to think the worst thing in life was to end up alone. It’s not. The worst thing in life is to end up with people who make you feel alone.",
+        "You were never created to live depressed, defeated, guilty, condemned, ashamed or unworthy. You were created to be victorious.",
+        "Walking with a friend in the dark is better than walking alone in the light.",
+        "I learned that courage was not the absence of fear, but the triumph over it.",
+        "You get in life what you have the courage to ask for.",
+        "I’ve failed over and over and over again in my life. And that is why I succeed.",
+        "What we have once enjoyed we can never lose; all that we love deeply becomes a part of us.",
+        "You may not control all the events that happen to you, but you can decide not to be reduced by them.",
+        "Don’t cry because it’s over, smile because it happened.",
+    ]; 
+    quoteBtn.addEventListener("click", function() { const randomIndex = Math.floor(Math.random() * quotes.length);
+        quoteDisplay.textContent = quotes[randomIndex]; });
