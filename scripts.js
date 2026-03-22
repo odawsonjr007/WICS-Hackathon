@@ -1,7 +1,7 @@
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -40,8 +40,9 @@ async function getQuotesByKeyword(keyword)
     const quotesCollection = collection(db, "quotes");
     const q = query(quotesCollection, where("keywords", "array-contains",
         keyword.toLowerCase()));
+        const snapshot = await getDocs(q);
     const quotes = [];
-    snapshop.forEach(doc => {
+    snapshot.forEach(doc => {
         quotes.push(doc.data());
     });
     return quotes;
@@ -77,7 +78,6 @@ document.addEventListener("DOMContentLoaded", function ()
             }
         });
     }
-});
     const quoteBtn = document.getElementById("quoteBtn");
     const quoteDisplay = document.getElementById("quoteDisplay");
     const authorDisplay = document.getElementById("authorDisplay");
@@ -92,20 +92,26 @@ document.addEventListener("DOMContentLoaded", function ()
                 authorDisplay.textContent = "";
                 return;
             }
-            const quotes = await getQuotesByKeyword(keyword);
-            
-            if (quotes.length > 0)
+            try{
+                const quotes = await getQuotesByKeyword(keyword);
+                if (quotes.length > 0)
+                {
+                    const randomIndex = Math.floor(Math.random() * quotes.length);
+                    const selected = quotes[randomIndex];   
+                    quoteDisplay.textContent = `"${selected.text}"`;
+                    authorDisplay.textContent = `-${selected.author}`;
+                }
+                else{
+                    quoteDisplay.textContent = "No quotes found for that keyword.";
+                    authorDisplay.textContent = "";
+                }
+            }
+            catch (err)
             {
-                randomIndex = Math.floor(Math.random * quotes.length);
-                const selected = quotes[randomIndex];   
-                quoteDisplay.textContent = `"${selected.text}"`;
-                authorDisplay.textContent = `-${selected.text}`;
+                console.error(err);
+                quoteDisplay.textContent = "Something went wrong.";
             }
-            else{
-                quotenDisplay.textContent = "No quotes found for that keyword.";
-                authorDisplay.textContent = "";
-            }
-        })
+        )
     }
-    quoteBtn.addEventListener("click", function() { const randomIndex = Math.floor(Math.random() * quotes.length);
-        quoteDisplay.textContent = quotes[randomIndex]; });
+});
+    

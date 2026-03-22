@@ -17,9 +17,9 @@
     <nav class = "navbar">
         <div class = "logo">SocBot</div>
         <div class = "nav-links">
-            <button1><a href = "index.html">Home</a></button1>
-            <button2><a href = "quotes.html">Quotes</a></button2>
-            <button2><a href = "login.html">Logout</a></button3>
+        <button1><a href = "index.html">Home</a></button1>
+        <button2><a href = "quotes.html">Quotes</a></button2>
+        <button2><a href = "login.html">Logout</a></button3>
         </div>
     </nav>
 
@@ -27,17 +27,14 @@
     <!--- inspire section-->
     <section id = "inspire" class = "section glass" style = "opacity: 1; transform: translateY(0px);">
         <link rel="stylesheet" href="style.css">
-
-        <h1>Inspire Your Day</h1>
-        <h2>Explore a collection of inspiring quotes that will uplift your spirits and motivate you to embrace positivity
-        </h2>
-        <form onsubmit="submitForm(event)"></form>
-        <input type="text" id="userinput" placeholder="Log your thoughts..." required>
-        <button type = "submit">Share</button>
-               <p id="quoteDisplay"></p>
-        <p id="authorDisplay"></p>
-        <script type="module" src ="scripts.js"></script>
-        <p2 id="response"></p2>
+        <h2>Inspire Your Day</h2>
+        <p>Explore a collection of inspiring quotes that will uplift your spirits and motivate you to embrace positivity
+        </p>
+        <form onsubmit="submitForm(event)">
+        <input type="text" id="searchInput" placeholder="Embrace your mood!">
+        <button id="quoteBtn">Share</button>
+        <p id="quoteDisplay"></p>
+        <p id="authorDisplay"></p> 
         </form>
         <div class = "contact-info">
             <p>Need help or someone to talk to?</p>
