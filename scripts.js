@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function ()
                 console.error(err);
                 quoteDisplay.textContent = "Something went wrong.";
             }
-        )
+    })
     }
 });
     
