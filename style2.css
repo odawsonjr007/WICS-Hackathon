@@ -14,7 +14,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 20px 60px;
+  padding: 30px 30px;
   display: flex;
   justify-content: space-between;
   backdrop-filter: blur(14px);
@@ -28,4 +28,68 @@ body {
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
+  
+}
+button1 {
+  width: 15%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #e9e8e6, #f3940f);
+  font-weight: 600;
+  cursor: pointer;
+}
+button2 {
+  width: 15%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #e9e8e6, #f3940f);
+  font-weight: 600;
+  cursor: pointer;
+}
+button3 {
+  width: 15%;
+  padding: 14px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #e9e8e6, #f3940f);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bottom-boxes {
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  padding: 0 40px;
+  gap: 300px
+}
+
+.glass-box {
+  width: 300px;
+  padding: 20px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+}
+
+#generator button {
+  margin-top: 10px;
+}
+
+.logo {
+    text-align: center;
+}
+.logo {
+    display: flex;
+    justify-content: center;
 }
